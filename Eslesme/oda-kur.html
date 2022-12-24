@@ -1,0 +1,132 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eslesme</title>
+
+    <?php 
+    session_start();
+    
+    if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+    
+     ?>
+
+    <style>
+      
+.button-23 {
+  margin-top: 15px;
+  background-color: #FFFFFF;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #222222;
+  cursor: pointer;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 13px 23px;
+  text-align: center;
+  text-decoration: none;
+  width: auto;
+}
+
+.button-23:focus-visible {
+  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+  transition: box-shadow .2s;
+}
+
+.button-23:active {
+  background-color: #F7F7F7;
+  border-color: #000000;
+  transform: scale(.96);
+}
+
+.button-23:disabled {
+  border-color: #DDDDDD;
+  color: #DDDDDD;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+        #bilgiler{
+            height: 100%;
+            width: 35%;
+            text-align: center;
+            background-color:rgb(234, 227, 227);
+            color: black;
+            float: left;
+        }
+
+        #oda_kur{
+            background-color:#397714;
+            width: 65%;
+            height: 100%;
+            text-align: center;
+            float: right;
+            
+        }
+
+        #txtarea {
+
+            height: auto;
+            width: auto;
+        }
+
+ 
+ 
+        #container {
+        width:100%;
+        height:auto;
+        position:absolute
+        margin:auto; 
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+  <div id="container">
+
+    <div id="bilgiler">
+
+      <h3 style="margin-top:2.5cm;" >Hesap Bilgilerim</h3>
+
+      <p style="margin-top: 1cm;">Fotoğraf:</p> <br>
+      <h1>Merhaba, <?php echo $_SESSION['name']; ?></h1>
+      <p>Ad:</p> 
+      <p>Soyad:</p>
+      <p>E-mail:</p>
+
+ 
+     </div>
+ 
+     <div id="oda_kur">
+        
+         <p style="margin-top:3cm;"></p>
+         
+<fieldset style="margin:0 auto; width: 400px;" >
+
+  <legend>Önemli Bilgiler</legend>
+  
+  <table style=" text-align:center " >
+      <tr><td>Ad Soyad : </td><td><input type="text" name="adsoyad" /></td></tr>
+      <tr><td>Telefonu : </td><td><input type="text" name="tel" /></td></tr>
+      <tr><td>Kaç kişi arıyorsunuz? : </td><td><input type="text" name="kisi" /></td></tr>
+      <tr><td>Mekan : </td><td><textarea style="resize: none;" name="mekan"></textarea></td></tr>
+      <tr><td>Hangi Oyun </td><td><textarea style="resize: none;" name="oyun"></textarea></td></tr>
+      <tr><td>Not:</td><td><input type="text" name="not" /></td></tr>
+  </table>
+  
+  </fieldset>
+         <br>
+         <button class="button-23" inputmode="submit" role="button">Oda Kur</button>
+     </div>
+  </div>
+
+    
+</body>
+</html>
